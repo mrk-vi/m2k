@@ -21,7 +21,6 @@
 #  SOFTWARE.
 
 import os
-import pathlib
 from . import downloader, util
 
 
@@ -29,18 +28,18 @@ def make_chapter_book(code, number):
     try:
         if number > 0:
             downloader.download_chapter(code, number)
-        os.system(f"kcc-c2e -p KPW -f MOBI -m {pathlib.Path.cwd() / 'data' / code / str(number)}")
+        os.system(f"kcc-c2e -p KPW -f MOBI -m {util.DATA_DIR / code / str(number)}")
     except Exception as e:
         print(e)
         raise FileNotFoundError
-    return (pathlib.Path.cwd() / 'data' / code / str(number)).with_suffix(".mobi")
+    return (util.DATA_DIR / code / str(number)).with_suffix(".mobi")
 
 
-def make_chapters_book(code, from_, to_):
+def make_manga_book(code, from_, to_):
     if to_ > from_ > 0:
         for i in range(from_, to_+1):
             downloader.download_chapter(code, i)
-    os.system(f"kcc-c2e -p KPW -f MOBI -m {pathlib.Path.cwd()/'data'/code}")
+    os.system(f"kcc-c2e -p KPW -f MOBI -m {util.DATA_DIR/code}")
 
 
 def send_chapter_book(code, number):

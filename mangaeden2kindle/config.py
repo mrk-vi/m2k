@@ -23,11 +23,7 @@
 import json
 import pathlib
 
-
-DEFAULT = json.load((pathlib.Path.cwd()/'config.json').open())
-
-email_address = DEFAULT['email_address']
-kindle_address = DEFAULT['kindle_address']
+BASE_DIR = pathlib.Path.home()/'.mangaeden2kindle'
 
 
 def set_email_address(email):
@@ -41,5 +37,21 @@ def set_kindle_address(email):
 
 
 def write_changes():
-    with (pathlib.Path.cwd() / 'config.json').open("w") as file:
+    with (BASE_DIR / 'config.json').open("w") as file:
         json.dump(DEFAULT, file, indent=4)
+
+
+try:
+    DEFAULT = json.load((BASE_DIR/'config.json').open())
+
+    email_address = DEFAULT['email_address']
+    kindle_address = DEFAULT['kindle_address']
+except FileNotFoundError as e:
+    try:
+        BASE_DIR.mkdir()
+    except FileExistsError as e:
+        print("Base dir already created")
+    DEFAULT = {"email_address": "", "kindle_address": ""}
+    write_changes()
+
+

@@ -20,13 +20,13 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
-import pathlib
+
 import yagmail
 from . import mangaeden_api, config
 
 API_URL = 'https://www.mangaeden.com/api'
 CDN_URL = "https://cdn.mangaeden.com/mangasimg"
-DATA_DIR = pathlib.Path.cwd()/'data'
+DATA_DIR = config.BASE_DIR/'data'
 
 
 def make_dir(path):
