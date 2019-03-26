@@ -36,7 +36,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     license=_license,
-    # url="github repo"
+    url="https://github.com/mrk-vi/m2k",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
