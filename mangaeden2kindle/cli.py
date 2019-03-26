@@ -30,7 +30,7 @@ def main():
 
 
 @main.command()
-def getlist():
+def get_list():
     click.echo(util.formatted_list())
 
 
@@ -38,7 +38,7 @@ def getlist():
 @click.argument('name')
 @click.argument('number', type=int)
 def send(name, number):
-    kindle.send_chapter_book(name, int(number))
+    kindle.send_chapter_book(name, number)
 
 
 @main.command()
@@ -61,5 +61,4 @@ def get_kindle():
 @main.command()
 def get_email():
     click.echo(config.email_address)
-
 
