@@ -4,9 +4,14 @@ via cli tools, a chapter from Manga Eden to your kindle device.
 
 At the moment you need a less secure app password for Gmail (your credentials can be stored in your system's keyring).
 
-You have to write a config.json file (see config.json.example)
-
-You have to download [kindlegen](https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765211) to make MOBI files that can be sent to your devices
+#### Installation
+* Download [kindlegen](https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765211) to make MOBI files that can be sent to your devices
+* My suggestion is to download the repo and run this (tested with python 3.6.7)
+```
+pip install -r requirements.txt .
+```
+* In your home you can make a directory .mangaeden2kindle and the file config.json (see config.json.sample).
+If you don't do that, the directory will create at the first run.
 
 #### Usage
 ```
