@@ -20,8 +20,9 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
-from mangaeden2kindle import kindle, util, config
 import click
+
+from mangaeden2kindle import kindle, util, config
 
 
 @click.group()

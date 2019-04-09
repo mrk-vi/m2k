@@ -20,9 +20,11 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
-from PIL import Image
-import requests
 from io import BytesIO
+
+import requests
+from PIL import Image
+
 from . import mangaeden_api, util
 
 

@@ -21,6 +21,7 @@
 #  SOFTWARE.
 
 import os
+
 from . import downloader, util
 
 

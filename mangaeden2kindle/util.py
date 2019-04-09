@@ -22,6 +22,7 @@
 
 
 import yagmail
+
 from . import mangaeden_api, config
 
 API_URL = 'https://www.mangaeden.com/api'
